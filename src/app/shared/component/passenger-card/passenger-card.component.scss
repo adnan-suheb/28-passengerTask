@@ -1,0 +1,15 @@
+
+
+.status{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+}
+
+.cardInput{
+    font-size: 1.4rem;
+}
+.cardInput:disabled{
+    background-color: transparent;
+    border: #fff;
+}

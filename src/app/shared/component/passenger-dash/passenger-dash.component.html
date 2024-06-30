@@ -1,0 +1,23 @@
+
+<section class="container mt-4">
+    <h2>Airline Passengers</h2>
+    <p>Total Checked in 
+        <strong>{{checkedInArr.length}}</strong> /
+        <strong>{{passengerData.length}}</strong>
+
+    </p>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <app-passenger-list [getPassList]="passList"
+            *ngFor="let passList of passengerData"            
+            ></app-passenger-list>
+        </div>
+        <div class="col-12">
+            <app-passenger-card
+            *ngFor="let passenger of passengerData"
+            [getPassObj]="passenger"
+            (emmitPassObj)="onEmmit($event)"
+            ></app-passenger-card>
+        </div>
+    </div>
+</section>

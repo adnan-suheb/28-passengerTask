@@ -1,0 +1,29 @@
+
+
+<div class="card mb-4">
+
+    <div class="card-body">
+        <div class="card-title">
+            <div class="cardTitle d-flex justify-content-between align-items-center">
+                <span class="status"
+                [ngClass]="{
+                    'bg-success':getPassObj.checkInStatus===true,
+                    'bg-danger':getPassObj.checkInStatus===false
+                }"></span>
+                <input disabled required type="text" #inputRef class="form-control cardInput" [value]="getPassObj.fname">
+                
+            </div>
+        </div>
+        <p *ngIf="getPassObj.checkInDate; else noCheckInDate" class="text-capitalize">check in date :
+            {{getPassObj.checkInDate | date}} </p>
+        <ng-template #noCheckInDate>
+            <p class="text-capitalize">Check in date : not checked in yet!</p>
+        </ng-template>
+        <p class="text-capitalize">children : {{getPassObj.child}} </p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button class="btn btn-primary" #editRef (click)="onEdit()">Edit</button>
+        <button class="btn btn-primary" style="display: none;" #updateRef (click)="onUpdate()" >Update</button>
+        <button class="btn btn-danger" (click)="onRemove()">Remove</button>
+    </div>
+</div>
